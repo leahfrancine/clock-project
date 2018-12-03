@@ -1,4 +1,3 @@
-$(document).load(function displayTime() {
 
     function displayTime() {
         var currentTime = new Date();
@@ -31,7 +30,7 @@ $(document).load(function displayTime() {
     
        
         var clockDiv = document.getElementById('clock');
-        document.querySelector("#d").innerHTML = `${hours}:${minutes}:${seconds};
+        document.querySelector("#d").innerHTML = `${hours}:${minutes}:${seconds};`
 
        
         clockDiv.innerText = hours + ":" + minutes + ":" + seconds + " " + meridiem;
@@ -39,6 +38,6 @@ $(document).load(function displayTime() {
     
     displayTime();
     
-    setInterval(displayTime, 1000);
+    var interval = setInterval(displayTime, 1000);
 
-});
+
