@@ -31,6 +31,7 @@ $(document).load(function displayTime() {
     
        
         var clockDiv = document.getElementById('clock');
+        document.querySelector("#d").innerHTML = `${hours}:${minutes}:${seconds};
 
        
         clockDiv.innerText = hours + ":" + minutes + ":" + seconds + " " + meridiem;
