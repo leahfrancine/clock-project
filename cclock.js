@@ -1,43 +1,26 @@
+var clock = document.getElementById("clock");
+function renderTime() {
+  var currentTime = new Date();
+  var h = currentTime.getHours();
+  var m = currentTime.getMinutes();
+  var s = currentTime.getSeconds();
 
-    function displayTime() {
-        var currentTime = new Date();
-        var hours = currentTime.getHours();
-        var minutes = currentTime.getMinutes();
-        var seconds = currentTime.getSeconds();
-   
-        var meridiem = "AM";
-        
-        if (hours > 12) {
-            hours = hours - 12; 
-            meridiem = "PM";
-        }
-       
-        if (hours === 0) {
-            hours = 12;    
-        }
-      
-        if(hours < 10) {
-           
-            hours = "0" + hours;
-        }
-       
-        if(minutes < 10) {
-            minutes = "0" + minutes;
-        }        
-        if(seconds < 10) {
-            seconds = "0" + seconds;
-        }
-    
-       
-        var clockDiv = document.getElementById('clock');
-        document.querySelector("#d").innerHTML = `${hours}:${minutes}:${seconds};`
+  if (h < 10){
+    h = "0" + h;
+  }
 
-       
-        clockDiv.innerText = hours + ":" + minutes + ":" + seconds + " " + meridiem;
-    }
-    
-    displayTime();
-    
-    var interval = setInterval(displayTime, 1000);
+  if (m < 10){
+    m = "0" + m;
+  }
 
+  if (s < 10){
+    s = "0" + s;
+  }
 
+  clock.textContent = h + ":" + m + ":" + s;
+  clock.innerText = h + ":" + m + ":" + s;
+
+  setTimeout(renderTime, 1000);
+}
+
+renderTime();
